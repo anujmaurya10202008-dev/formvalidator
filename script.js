@@ -166,29 +166,26 @@ function showCards() {
   });
 }
 
-function updateCard (){
-  for (let i = 0; i < 3; i++ ){
+function updateCard() {
+  for (let i = 0; i < 3; i++) {
     card.style.zIndex = 3 - i;
-    card.style.transform = `translateY(${i * 10}px)  scale(${1 - i *0.02})`;
-    card.style.opacity = `${1 - i *0.02}`
+    card.style.transform = `translateY(${i * 10}px)  scale(${1 - i * 0.02})`;
+    card.style.opacity = `${1 - i * 0.02}`;
   }
 }
 
-
 up.addEventListener("click", function () {
   let lastChild = stack.lastChild;
-  if(lastChild){
+  if (lastChild) {
     stack.insertBefore(lastChild, stack.firstElementChild);
   }
   updateCard();
-  
 });
 
 down.addEventListener("click", function () {
   let firstChild = stack.firstChild;
-  if(firstChild){
+  if (firstChild) {
     stack.appendChild(firstChild);
   }
-    updateCard();
-
+  updateCard();
 });
